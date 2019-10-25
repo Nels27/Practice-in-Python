@@ -8,21 +8,30 @@ def swapFunc(firstInd, secInd, dataList):
     dataList[secInd] = a
 
 
-
 def zeroFinder(data):
-    for i in range(0,len(data)):
-        #pdb.set_trace()
+    i = 0
+    k = 1
+    while (i < len(data) - 1):
+        pdb.set_trace()
         if(data[i] == 0):
-            for k in range(i+1,len(data)):
-                if(data[len(data)-k] != 0):
-                    swapFunc(i,(len(data)-k),data)
-                    break
-                break
+            if(data[len(data) - (k)] != 0):
+                swapFunc(i,len(data) - k,data)
+            else:
+                k = k+1
+        else:
+            i = i+1
+
+
+
+        #if(data[i] == 0):
+         #   for k in range(i+1,len(data)):
+          #      if(data[len(data) - k] != 0):
+           #         swapFunc(i,len(data) - k,data)
 
 
 
 def main():
-    data = [0,1,2,3,6,0,2]
+    data = [0,2,3,0]
     zeroFinder(data)
     #pdb.set_trace()
     print(data)
